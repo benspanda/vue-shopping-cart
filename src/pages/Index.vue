@@ -13,16 +13,16 @@
       <p class="text-gray-500">All of the products in our portfolio</p>
     </div>
     <div class="mx-auto flex container">
-      <div class="sidebar">
-        <div class="sidebar-section">
-          <h3>Sort</h3>
+      <div class="flex flex-col w-56">
+        <h3 class="text-xl mt-10">Sort</h3>
+        <div class="flex flex-col p-2">
           <a href="">Latest</a>
           <a href="">Popular</a>
           <a href="">Available</a>
           <a href="">Coming Soon</a>
         </div>
       </div>
-      <div class="">
+      <div class="flex flex-col flex-1">
         <div class="">
           <g-image alt="Example image" src="~/favicon.png" width="135" />
           <div class="">
