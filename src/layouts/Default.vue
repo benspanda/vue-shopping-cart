@@ -8,7 +8,7 @@
         <nav class="header-menu">
           <g-link to="/">Home</g-link>
           <g-link to="/about">About</g-link>
-          <g-link class="cart-link primary-button" to="/about">Cart</g-link>
+          <g-link class="cart-link primary-button" to="/about"><CartIcon /> Cart</g-link>
         </nav>
       </div>
     </header>
@@ -27,3 +27,13 @@ query {
 <style>
 
 </style>
+
+<script>
+import CartIcon from '~/assets/images/shopping-cart.svg'
+
+export default {
+  components: {
+    CartIcon
+  }
+}
+</script>

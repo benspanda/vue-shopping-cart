@@ -49,6 +49,12 @@ body {
   color: white;
   padding: 5px 15px;
   box-shadow: $medium-shadow;
+  display: flex;
+  align-items: center;
+
+  svg {
+    margin-right: 5px;
+  }
 }
 
 // header ---

@@ -6,7 +6,7 @@
       <h2>{{title}}</h2>
       <p>{{year}}</p>
       <div class="card-actions">
-        <a href="" class="primary-button">Add to cart</a>
+        <a href="" class="primary-button"><PlusIcon /> Add to cart</a>
         <a href="">Details</a>
       </div>
     </div>
@@ -14,7 +14,12 @@
 </template>
 
 <script>
+import PlusIcon from '~/assets/images/plus.svg'
+
 export default {
+  components: {
+    PlusIcon
+  },
   name: 'Movie',
   props: [
     'title',
