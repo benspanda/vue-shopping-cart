@@ -1,5 +1,4 @@
 import DefaultLayout from '~/layouts/Default.vue'
-import Toasted from 'vue-toasted'
 import '~/assets/scss/styles.scss'
 
 export default function (Vue, { router, head, isClient }) {
@@ -10,7 +9,11 @@ export default function (Vue, { router, head, isClient }) {
   })
 
   // add toast support
-  Vue.use(Toasted)
+  // only process on client side (dont process when building for SSR as this plugin relies on the window object)
+  if(process.isClient) {
+    const { default: Toasted } = require('vue-toasted')
+    Vue.use(Toasted)
+  }
 
   // Set default layout as a global component
   Vue.component('Layout', DefaultLayout)
