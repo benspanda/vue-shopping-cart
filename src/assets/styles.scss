@@ -1,3 +1,4 @@
+// variables ---
 $light-gray: #eeeeee;
 $gray: #9b9c9e;
 $red: #ff5859;
@@ -6,13 +7,14 @@ $blue-hover: #4775cc;
 $green: #7dcf85;
 $green-hover: #67bb70;
 
+$medium-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+$large-shadow: 0 10px 25px -5px rgba(142, 142, 142, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
 $break-large: 1200px;
 $break-medium: 900px;
 $break-small: 600px;
 
-$medium-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-$large-shadow: 0 10px 25px -5px rgba(142, 142, 142, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-
+// general ---
 * {
   margin: 0;
 }
@@ -30,7 +32,6 @@ button {
   font-family: 'Poppins', sans-serif;
 }
 
-// general ---
 .section {
   width: 100%;
   display: flex;

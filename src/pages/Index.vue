@@ -1,13 +1,5 @@
 <template>
   <Layout :cart="cart" v-on:remove-item="removeItem">
-    
-    <!-- <div class="bg-white rounded-lg p-6"> -->
-      <!-- Learn how to use images here: https://gridsome.org/docs/images -->
-      <!-- <g-image alt="Example image" src="~/favicon.png" width="135" />
-      
-      <h1>Hello, world!</h1>
-    </div> -->
-   
     <div class="intro section">
       <div class="container">
         <h1>Explore Movies</h1>
@@ -33,7 +25,6 @@
         </div>
       </div>
     </div>
-
   </Layout>
 </template>
 
@@ -47,7 +38,7 @@ export default {
     }
   },
   metaInfo: {
-    title: 'Catalogue'
+    title: 'Catalogue',
   },
   components: {
     Movie
@@ -157,7 +148,3 @@ export default {
   }
 }
 </script>
-
-<style>
-
-</style>
