@@ -44,10 +44,6 @@ query {
 }
 </static-query>
 
-<style>
-
-</style>
-
 <script>
 import CartItem from '~/components/CartItem.vue'
 import CartIcon from '~/assets/images/shopping-cart.svg'
@@ -98,7 +94,6 @@ export default {
       }
     },
     removeItem: function(title) {
-      console.log(title)
       this.$emit('remove-item', title)
     }
   }

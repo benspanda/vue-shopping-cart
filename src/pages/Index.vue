@@ -47,7 +47,7 @@ export default {
     }
   },
   metaInfo: {
-    title: 'Hello, world!'
+    title: 'Catalogue'
   },
   components: {
     Movie
@@ -82,22 +82,12 @@ export default {
     // pretending were getting the data loaded from an api
     this.movies = [
       {
-        title: 'Shawshank Redemption',
-        price: 15.99,
-        year: 1994,
+        title: 'Aladdin',
+        price: 25.99,
+        year: 2019,
         released: true,
-        genre: 'Drama',
-        description: 'Andy Dufresne (Tim Robbins) is sentenced to two consecutive life terms in prison for the murders of his wife and her lover and is sentenced to a tough prison. However, only Andy knows he didn\'t commit the crimes.',
-        image: 'https://goodmovieslist.com/article-images/best-drama-movies.jpg'
-      },
-      {
-        title: 'Arrival',
-        price: 15.99,
-        year: 2016,
-        released: true,
-        genre: 'Drama',
-        description: 'Taking place after alien crafts land around the world, an expert linguist is recruited by the military to determine whether they come in peace or are a threat.',
-        image: 'https://cdn3.movieweb.com/i/movie/clquXpvMKVcic1FwpAoZLYpSxt7Pgd/384:50/Arrival.jpg'
+        genre: 'Action',
+        image: 'https://cdn3.movieweb.com/i/movie/EQe6vhaL6aTs28sa1ftJb5h20G09Ei/304:50/Aladdin.jpg'
       },
       {
         title: 'Annabelle Comes Home',
@@ -105,8 +95,31 @@ export default {
         year: 2019,
         released: false,
         genre: 'Horror',
-        description: '',
         image: 'https://cdn3.movieweb.com/i/movie/eCLfLIYzXjJRLbyeEVIxgR7IqCcSHI/304:50/Annabelle-Comes-Home.jpg'
+      },
+      {
+        title: 'Arrival',
+        price: 16.99,
+        year: 2016,
+        released: true,
+        genre: 'Drama',
+        image: 'https://cdn3.movieweb.com/i/movie/clquXpvMKVcic1FwpAoZLYpSxt7Pgd/384:50/Arrival.jpg'
+      },
+      {
+        title: 'Deadpool 2',
+        price: 11.99,
+        year: 2018,
+        released: true,
+        genre: 'Comedy',
+        image: 'https://cdn3.movieweb.com/i/movie/97DOpaTnrtV8OgMmFhBwlWNhEbBbre/304:50/Deadpool-2.jpg'
+      },
+      {
+        title: 'Joker',
+        price: 20.99,
+        year: 2019,
+        released: false,
+        genre: 'Action',
+        image: 'https://cdn3.movieweb.com/i/movie/Oiro1gjJCbQyRJmRHuDlIk9ZgGonde/304:50/Joker.jpg'
       },
       {
         title: 'The Lion King',
@@ -114,44 +127,31 @@ export default {
         year: 2019,
         released: false,
         genre: 'Fantasy',
-        description: 'A live-action adaptation of the classic Disney animated movie.',
         image: 'https://cdn3.movieweb.com/i/movie/juAoW8O4A9oVYDgII5tpGiIazDz43N/304:50/The-Lion-King.jpg'
       },
       {
+        title: 'Shawshank Redemption',
+        price: 18.99,
+        year: 1994,
+        released: true,
+        genre: 'Drama',
+        image: 'https://goodmovieslist.com/article-images/best-drama-movies.jpg'
+      },
+      {
         title: 'Venom',
-        price: 15.99,
+        price: 3.99,
         year: 2018,
         released: true,
         genre: 'Action',
-        description: 'A potential "Spider-Man" spinoff, Sony is developing the project, based on the villain who appeared in "Spider-Man 3" and is hoping the character could serve as an antidote to the aging "Spider-Man" franchise in the way that Fox has used Wolverine to add longevity to its "X-Men" franchise.',
         image: 'https://cdn3.movieweb.com/i/movie/7TydZhcv636GUp4WmTAzyfUTkJmh9N/304:50/Venom.jpg'
       },
       {
-        title: 'Joker',
-        price: 15.99,
-        year: 2019,
-        released: false,
-        genre: 'Action',
-        description: 'This Joker origin story is said to be taking place during the 80s in Gotham City.',
-        image: 'https://cdn3.movieweb.com/i/movie/Oiro1gjJCbQyRJmRHuDlIk9ZgGonde/304:50/Joker.jpg'
-      },
-      {
         title: 'Zombieland Double Tap',
-        price: 15.99,
+        price: 21.99,
         year: 2019,
         released: true,
         genre: 'Comedy',
-        description: 'Sony has closed deals with Polone and helmer Ruben Fleischer to return for a 3D sequel to the original. The studio is currently in talks with stars Woody Harrelson and Jesse Eisenberg to reprise their roles as a pair of post-apocalyptic survivors.',
         image: 'https://cdn3.movieweb.com/i/movie/K1SmOyqeKnqM2Lz5YjcbqAfhOeufzD/304:50/Zombieland-Double-Tap.jpg'
-      },
-      {
-        title: 'Deadpool 2',
-        price: 15.99,
-        year: 2018,
-        released: true,
-        genre: 'Comedy',
-        description: 'In September 2015, Kinberg commented on the possibility of a sequel for Deadpool: "we were talking about the sequel while we were making the movie just because when you make a film like this that\'s from a serialized source material, you hope that it\'s the first of many". By the release of Deadpool, Fox had already greenlit the sequel, with Reese and Wernick returning to write, and Miller being looked at to return as director.',
-        image: 'https://cdn3.movieweb.com/i/movie/97DOpaTnrtV8OgMmFhBwlWNhEbBbre/304:50/Deadpool-2.jpg'
       },
     ]
   }
