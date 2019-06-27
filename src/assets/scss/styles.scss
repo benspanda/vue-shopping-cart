@@ -289,7 +289,6 @@ header {
 
   .container {
     flex-direction: row;
-    padding: 0;
   }
 
   .sidebar {
@@ -332,6 +331,7 @@ header {
   .cards {
     display: flex;
     flex-wrap: wrap;
+    margin: 0 -15px;
 
     .card {
       border: 1px solid $light-gray;
