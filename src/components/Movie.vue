@@ -47,6 +47,7 @@ export default {
       const _this = this
       _this.adding = true
 
+      // pretending were waiting for a response from the server
       setTimeout(function() {
         _this.$emit('add-to-cart', {'title': _this.title, 'price': _this.price, 'image': _this.image, 'released': _this.released})
         _this.adding = false

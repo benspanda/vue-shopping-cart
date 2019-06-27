@@ -1,6 +1,6 @@
 import DefaultLayout from '~/layouts/Default.vue'
 import Toasted from 'vue-toasted'
-import '~/assets/styles.scss'
+import '~/assets/scss/styles.scss'
 
 export default function (Vue, { router, head, isClient }) {
   // add google font

@@ -12,7 +12,7 @@
           <div class="cards">
             <Movie 
               v-for="movie in movies" 
-              v-on:add-to-cart="addToCart"
+              v-on:add-to-cart="addToCart" 
               :key="movie.title" 
               :title="movie.title" 
               :price="movie.price" 
