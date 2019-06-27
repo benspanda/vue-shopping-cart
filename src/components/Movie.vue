@@ -32,7 +32,7 @@ export default {
     'image',
     'genre',
   ],
-  data () {
+  data() {
     return {
       message: 'Try change me!',
       adding: false

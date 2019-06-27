@@ -32,7 +32,7 @@
 import Movie from '~/components/Movie.vue'
 
 export default {
-  data: function() {
+  data() {
     return {
       cart: {}
     }
@@ -44,7 +44,7 @@ export default {
     Movie
   },
   methods: {
-    addToCart: function(data) {
+    addToCart(data) {
       if(this.cart[data.title]) {
         this.$toasted.error(data.title + ' has already been added to your cart', { 
           theme: 'bubble', 
@@ -60,7 +60,7 @@ export default {
         });
       }
     },
-    removeItem: function(title) {
+    removeItem(title) {
       this.$delete(this.cart, title)
       this.$toasted.success(title + ' has been removed from your cart', { 
         theme: 'bubble', 

@@ -26,11 +26,6 @@ export default {
     'image',
     'released'
   ],
-  data () {
-    return {
-      message: 'Try change me!'
-    }
-  },
   methods: {
     removeItem(e) {
       e.preventDefault()

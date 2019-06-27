@@ -65,35 +65,44 @@ export default {
     CartIcon,
     CartItem
   },
-  data: function() {
+  data() {
     return {
       cartActive: false,
       cartHide: true
     }
   },
   methods: {
-    toggleCart: function() {
+    toggleCart() {
       const _this = this
       
       // wait for set timeout to finish to prevent vars from getting out of sync
       if(!trans) {
         trans = true
+        var disableScrollClass = 'disable-scroll'
         if(_this.cartActive) {
           setTimeout(function(){
             _this.cartHide = true
             trans = false
-          }, 300)
+          }, 500)
           _this.cartActive = false
+
+          // enable scrolliing
+          var el = document.querySelectorAll('body')[0]
+          el.classList.remove(disableScrollClass)
         } else {
           _this.cartHide = false
           setTimeout(function(){
             _this.cartActive = true
             trans = false
           }, 0);
+
+          // disable scrolling
+          var el = document.querySelectorAll('body')[0]
+          el.classList.add(disableScrollClass)
         }
       }
     },
-    removeItem: function(title) {
+    removeItem(title) {
       this.$emit('remove-item', title)
     }
   }
