@@ -8,11 +8,28 @@
         <nav class="header-menu">
           <g-link to="/">Home</g-link>
           <g-link to="/about">About</g-link>
-          <g-link class="cart-link primary-button" to="/about"><CartIcon /> Cart</g-link>
+          <button class="cart-link primary-button hide" @click="toggleCart"><CartIcon /> Cart</button>
         </nav>
       </div>
     </header>
-    <slot/>
+    <div class="cart-wrapper" v-if="!cartHide" :class="{ active: cartActive }">
+      <div class="cart-background" @click="toggleCart"></div>
+      <div class="cart">
+        <h2>Cart</h2>
+        <p v-if="!Object.keys(this.cart).length" class="cart-empty-message">Your cart is empty</p>
+        <div class="cart-items">
+          <CartItem 
+            v-for="item in cart" 
+            :key="item.title" 
+            :title="item.title" 
+            :price="item.price" 
+            :image="item.image"
+          />
+        </div>
+        <a class="checkout-button" href="">Checkout</a>
+      </div>
+    </div>
+    <slot v-on:add-to-cart="addToCart" />
   </div>
 </template>
 
@@ -29,11 +46,58 @@ query {
 </style>
 
 <script>
+import CartItem from '~/components/CartItem.vue'
 import CartIcon from '~/assets/images/shopping-cart.svg'
+import { setTimeout } from 'timers'
+
+var trans = false // true when menu animating
 
 export default {
+  props: [
+    'cart'
+  ],
+  methods: {
+    addToCart: function(data) {
+      console.log('added to cart')
+      console.log(data)
+    }
+  },
   components: {
-    CartIcon
+    CartIcon,
+    CartItem
+  },
+  data: function() {
+    return {
+      cartActive: false,
+      cartHide: true
+    }
+  },
+  methods: {
+    toggleCart: function() {
+      const _this = this
+      
+      // wait for set timeout to finish to prevent vars from getting out of sync
+      if(!trans) {
+        trans = true
+        if(_this.cartActive) {
+          setTimeout(function(){
+            _this.cartHide = true
+            trans = false
+          }, 300)
+          _this.cartActive = false
+        } else {
+          _this.cartHide = false
+          setTimeout(function(){
+            _this.cartActive = true
+            trans = false
+          }, 0);
+        }
+      }
+    }
+  },
+  updated() {
+    console.log('UPDATED')
+    console.log(this.cart)
   }
 }
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <Layout>
+  <Layout :cart="cart">
     
     <!-- <div class="bg-white rounded-lg p-6"> -->
       <!-- Learn how to use images here: https://gridsome.org/docs/images -->
@@ -34,7 +34,16 @@
         </div>
         <div class="content">
           <div class="cards">
-            <Movie v-for="movie in movies" :key="movie.id" :title="movie.title" :year="movie.year" :image="movie.image" />
+            <Movie 
+              v-for="movie in movies" 
+              v-on:add-to-cart="addToCart"
+              :key="movie.title" 
+              :title="movie.title" 
+              :price="movie.price" 
+              :year="movie.year" 
+              :image="movie.image" 
+              :released="movie.released" 
+            />
           </div>
         </div>
       </div>
@@ -49,7 +58,7 @@ import Movie from '~/components/Movie.vue'
 export default {
   data: function() {
     return {
-      movies: []
+      cart: {}
     }
   },
   metaInfo: {
@@ -58,12 +67,19 @@ export default {
   components: {
     Movie
   },
+  methods: {
+    addToCart: function(data) {
+      console.log('added to cart')
+      this.cart[data.title] = data
+      console.log(this.cart)
+    }
+  },
   created() {
     // pretending were getting the data loaded from an api
     this.movies = [
       {
-        id: 1,
         title: 'Shawshank Redemption',
+        price: 15.99,
         year: 1994,
         released: true,
         genre: 'drama',
@@ -71,8 +87,8 @@ export default {
         image: 'https://goodmovieslist.com/article-images/best-drama-movies.jpg'
       },
       {
-        id: 2,
         title: 'Arrival',
+        price: 15.99,
         year: 2016,
         released: true,
         genre: 'drama',
@@ -80,8 +96,8 @@ export default {
         image: 'https://cdn3.movieweb.com/i/movie/clquXpvMKVcic1FwpAoZLYpSxt7Pgd/384:50/Arrival.jpg'
       },
       {
-        id: 3,
         title: 'Annabelle Comes Home',
+        price: 15.99,
         year: 2019,
         released: false,
         genre: 'horror',
@@ -89,8 +105,8 @@ export default {
         image: 'https://cdn3.movieweb.com/i/movie/eCLfLIYzXjJRLbyeEVIxgR7IqCcSHI/304:50/Annabelle-Comes-Home.jpg'
       },
       {
-        id: 4,
         title: 'The Lion King',
+        price: 15.99,
         year: 2019,
         released: false,
         genre: 'fantasy',
@@ -98,8 +114,8 @@ export default {
         image: 'https://cdn3.movieweb.com/i/movie/juAoW8O4A9oVYDgII5tpGiIazDz43N/304:50/The-Lion-King.jpg'
       },
       {
-        id: 5,
         title: 'Venom',
+        price: 15.99,
         year: 2018,
         released: true,
         genre: 'action',
@@ -107,8 +123,8 @@ export default {
         image: 'https://cdn3.movieweb.com/i/movie/7TydZhcv636GUp4WmTAzyfUTkJmh9N/304:50/Venom.jpg'
       },
       {
-        id: 6,
         title: 'Joker',
+        price: 15.99,
         year: 2019,
         released: false,
         genre: 'action',
@@ -116,8 +132,8 @@ export default {
         image: 'https://cdn3.movieweb.com/i/movie/Oiro1gjJCbQyRJmRHuDlIk9ZgGonde/304:50/Joker.jpg'
       },
       {
-        id: 7,
         title: 'Zombieland Double Tap',
+        price: 15.99,
         year: 2019,
         released: true,
         genre: 'comedy',
@@ -125,8 +141,8 @@ export default {
         image: 'https://cdn3.movieweb.com/i/movie/K1SmOyqeKnqM2Lz5YjcbqAfhOeufzD/304:50/Zombieland-Double-Tap.jpg'
       },
       {
-        id: 8,
         title: 'Deadpool 2',
+        price: 15.99,
         year: 2018,
         released: true,
         genre: 'comedy',
