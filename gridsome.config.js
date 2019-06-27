@@ -6,8 +6,6 @@
 
 module.exports = {
   siteName: 'Movie Store',
-  plugins: [
-  ],
   chainWebpack: config => {
     // add svg loader to webpack
     const svgRule = config.module.rule('svg')

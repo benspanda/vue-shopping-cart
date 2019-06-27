@@ -10,7 +10,7 @@ export default function (Vue, { router, head, isClient }) {
 
   // add toast support
   // only process on client side (dont process when building for SSR as this plugin relies on the window object)
-  if(process.isClient) {
+  if(isClient) {
     const { default: Toasted } = require('vue-toasted')
     Vue.use(Toasted)
   }
