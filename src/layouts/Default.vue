@@ -6,7 +6,6 @@
           <g-link to="/">{{ $static.metaData.siteName }}</g-link>
         </h1>
         <nav class="header-menu">
-          <g-link to="/">Home</g-link>
           <button class="cart-link primary-button hide" @click="toggleCart">
             <CartIcon /> Cart
             <p class="cart-count" v-if="Object.keys(this.cart).length">{{ Object.keys(this.cart).length }}</p>
@@ -30,7 +29,7 @@
             v-on:remove-item="removeItem"
           />
         </div>
-        <a class="checkout-button" href="">Checkout</a>
+        <button class="checkout-button" href="">Checkout</button>
       </div>
     </div>
     <slot v-on:add-to-cart="addToCart" />

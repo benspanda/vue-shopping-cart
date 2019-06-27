@@ -4,6 +4,7 @@ $red: #ff5859;
 $blue: #6488cc;
 $blue-hover: #4775cc;
 $green: #7dcf85;
+$green-hover: #67bb70;
 
 $break-large: 1200px;
 $break-medium: 900px;
@@ -101,6 +102,10 @@ header {
   .header-logo {
     font-size: 20px;
 
+    @media screen and (max-width: $break-small) {
+      font-size: 17px;
+    }
+
     a {
       text-decoration: none;
       color: $red;
@@ -189,6 +194,14 @@ header {
     font-weight: 600;
     text-align: center;
     padding: 15px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    transition: background-color .3s;
+
+    &:hover {
+      background-color: $green-hover;
+    }
   }
 
   .cart-items {
@@ -258,11 +271,13 @@ header {
   h1 {
     font-size: 35px;
     font-weight: 500;
+    text-align: center;
   }
 
   p {
     font-size: 20px;
     margin-top: 15px;
+    text-align: center;
     color: $gray;
   }
 }
@@ -360,6 +375,9 @@ header {
 
       .card-info {
         padding: 15px;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
 
         h2 {
           font-size: 18px;
@@ -373,7 +391,8 @@ header {
 
       .card-actions {
         display: flex;
-        margin-top: 15px;
+        padding-top: 15px;
+        margin-top: auto;
         align-items: center;
 
         a, button {
@@ -384,7 +403,6 @@ header {
 
           &.primary-button {
             color: white;
-            transition: background-color .3s;
 
             &.adding {
               background-color: $gray;
