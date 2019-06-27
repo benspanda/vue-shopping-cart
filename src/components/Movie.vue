@@ -4,13 +4,12 @@
     <g-image :alt="title + ' Poster'" :src="image" />
     <div class="card-info">
       <h2>{{title}}</h2>
-      <p>{{year}}</p>
+      <p>${{price}} • {{year}} • {{genre}}</p>
       <div class="card-actions">
         <button @click="addToCart" class="primary-button" :class="{adding: adding}">
           <p v-if="!adding"><PlusIcon /> Add to cart</p>
           <p v-if="adding">Adding...</p>
         </button>
-        <a href="">Details</a>
       </div>
     </div>
   </div>
@@ -31,6 +30,7 @@ export default {
     'year',
     'released',
     'image',
+    'genre',
   ],
   data () {
     return {
