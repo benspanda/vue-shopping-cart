@@ -2,12 +2,14 @@ $light-gray: #eeeeee;
 $gray: #9b9c9e;
 $red: #ff5859;
 $blue: #6488cc;
+$blue-hover: #4775cc;
 $green: #7dcf85;
 
 $break-large: 1200px;
 $break-medium: 900px;
 
 $medium-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+$large-shadow: 0 10px 25px -5px rgba(142, 142, 142, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 
 * {
   margin: 0;
@@ -24,14 +26,6 @@ body {
 
 button {
   font-family: 'Poppins', sans-serif;
-}
-
-.shadow-md {
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-}
-
-.shadow-xl {
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 // general ---
@@ -60,10 +54,28 @@ button {
   box-shadow: $medium-shadow;
   display: flex;
   align-items: center;
+  position: relative;
   cursor: pointer;
+  transition: background-color .3s;
 
   svg {
     margin-right: 5px;
+  }
+
+  .cart-count {
+    background-color: $red;
+    font-size: 12px;
+    position: absolute;
+    right: -5px;
+    top: -5px;
+    min-width: 20px;
+    line-height: 20px;
+    border-radius: 100px;
+    box-shadow: $medium-shadow;
+  }
+
+  &:not(.adding):hover {
+    background-color: $blue-hover;
   }
 }
 
@@ -142,6 +154,7 @@ header {
 
 .cart {
   width: 400px;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   background-color: white;
@@ -208,6 +221,10 @@ header {
         h3 {
           font-weight: 500;
           font-size: 18px;
+        }
+
+        .cart-item-preorder-label {
+          color: $red;
         }
 
         .cart-items-actions {
@@ -302,7 +319,7 @@ header {
       border: 1px solid $light-gray;
       border-radius: 5px;
       overflow: hidden;
-      box-shadow: 0 10px 25px -5px rgba(142, 142, 142, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      box-shadow: $large-shadow;
       width: calc(100%/3 - 32px);
       margin: 0 0 30px 30px;
       display: flex;
@@ -361,6 +378,18 @@ header {
 
           &.primary-button {
             color: white;
+            transition: background-color .3s;
+
+            &.adding {
+              background-color: $gray;
+              cursor: progress;
+            }
+
+            p {
+              color: white;
+              align-items: center;
+              display: flex;
+            }
           }
         }
       }

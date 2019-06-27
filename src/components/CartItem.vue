@@ -3,8 +3,9 @@
     <g-image alt="" :src="image" />
     <div class="cart-item-details">
       <h3>{{title}}</h3>
+      <p class="cart-item-preorder-label" v-if="!released">Pre-order</p>
       <div class="cart-items-actions">
-        <a href="">Remove</a>
+        <a href="#remove" @click="removeItem">Remove</a>
       </div>
     </div>
     <p class="cart-item-price">${{price}}</p>
@@ -23,6 +24,7 @@ export default {
     'price',
     'title',
     'image',
+    'released'
   ],
   data () {
     return {
@@ -30,8 +32,9 @@ export default {
     }
   },
   methods: {
-    onClick () {
-      this.message = 'Here you go :)'
+    removeItem(e) {
+      e.preventDefault()
+      this.$emit('remove-item', this.title)
     }
   }
 }

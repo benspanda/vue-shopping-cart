@@ -1,5 +1,5 @@
 <template>
-  <Layout :cart="cart">
+  <Layout :cart="cart" v-on:remove-item="removeItem">
     
     <!-- <div class="bg-white rounded-lg p-6"> -->
       <!-- Learn how to use images here: https://gridsome.org/docs/images -->
@@ -69,9 +69,28 @@ export default {
   },
   methods: {
     addToCart: function(data) {
-      console.log('added to cart')
-      this.cart[data.title] = data
-      console.log(this.cart)
+      if(this.cart[data.title]) {
+        this.$toasted.error(data.title + ' has already been added to your cart', { 
+          theme: 'bubble', 
+          position: 'top-right', 
+          duration : 3000
+        });
+      } else {
+        this.$set(this.cart, data.title, data)
+        this.$toasted.success(data.title + ' has been added to your cart', { 
+          theme: 'bubble', 
+          position: 'top-right', 
+          duration : 3000
+        });
+      }
+    },
+    removeItem: function(title) {
+      this.$delete(this.cart, title)
+      this.$toasted.success(title + ' has been removed from your cart', { 
+        theme: 'bubble', 
+        position: 'top-right', 
+        duration : 3000
+      });
     }
   },
   created() {

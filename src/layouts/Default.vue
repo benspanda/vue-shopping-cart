@@ -7,8 +7,10 @@
         </h1>
         <nav class="header-menu">
           <g-link to="/">Home</g-link>
-          <g-link to="/about">About</g-link>
-          <button class="cart-link primary-button hide" @click="toggleCart"><CartIcon /> Cart</button>
+          <button class="cart-link primary-button hide" @click="toggleCart">
+            <CartIcon /> Cart
+            <p class="cart-count" v-if="Object.keys(this.cart).length">{{ Object.keys(this.cart).length }}</p>
+          </button>
         </nav>
       </div>
     </header>
@@ -23,7 +25,9 @@
             :key="item.title" 
             :title="item.title" 
             :price="item.price" 
-            :image="item.image"
+            :image="item.image" 
+            :released="item.released" 
+            v-on:remove-item="removeItem"
           />
         </div>
         <a class="checkout-button" href="">Checkout</a>
@@ -93,11 +97,11 @@ export default {
           }, 0);
         }
       }
+    },
+    removeItem: function(title) {
+      console.log(title)
+      this.$emit('remove-item', title)
     }
-  },
-  updated() {
-    console.log('UPDATED')
-    console.log(this.cart)
   }
 }
 </script>

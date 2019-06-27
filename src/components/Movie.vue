@@ -6,7 +6,10 @@
       <h2>{{title}}</h2>
       <p>{{year}}</p>
       <div class="card-actions">
-        <button @click="$emit('add-to-cart', {'title': title, 'price': price, 'image': image})" class="primary-button"><PlusIcon /> Add to cart</button>
+        <button @click="addToCart" class="primary-button" :class="{adding: adding}">
+          <p v-if="!adding"><PlusIcon /> Add to cart</p>
+          <p v-if="adding">Adding...</p>
+        </button>
         <a href="">Details</a>
       </div>
     </div>
@@ -15,6 +18,7 @@
 
 <script>
 import PlusIcon from '~/assets/images/plus.svg'
+import { setTimeout } from 'timers';
 
 export default {
   components: {
@@ -30,12 +34,23 @@ export default {
   ],
   data () {
     return {
-      message: 'Try change me!'
+      message: 'Try change me!',
+      adding: false
     }
   },
   methods: {
-    onClick () {
-      this.message = 'Here you go :)'
+    addToCart() {
+      if(this.adding) {
+        return;
+      }
+
+      const _this = this
+      _this.adding = true
+
+      setTimeout(function() {
+        _this.$emit('add-to-cart', {'title': _this.title, 'price': _this.price, 'image': _this.image, 'released': _this.released})
+        _this.adding = false
+      }, 1000)
     }
   }
 }
