@@ -3,7 +3,7 @@ This is an "add to cart" interface I developed in Vue.js as a "coding challenge"
 
 I developed it using Gridsome so I could build the site to be SEO friendly. 
 
-One thing I would change with this if using for a real website, is using a state managment library like Vuex.
+One thing I would change with this if using for a real website, is using a state managment library like Vuex. I would also update the images so they are locally hosted.
 
 
 # Instructions
