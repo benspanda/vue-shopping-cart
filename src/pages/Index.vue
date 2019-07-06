@@ -78,7 +78,7 @@ export default {
         year: 2019,
         released: true,
         genre: 'Action',
-        image: 'https://cdn3.movieweb.com/i/movie/EQe6vhaL6aTs28sa1ftJb5h20G09Ei/304:50/Aladdin.jpg'
+        image: 'https://m.media-amazon.com/images/M/MV5BMjQ2ODIyMjY4MF5BMl5BanBnXkFtZTgwNzY4ODI2NzM@._V1_.jpg'
       },
       {
         title: 'Annabelle Comes Home',
@@ -86,7 +86,7 @@ export default {
         year: 2019,
         released: false,
         genre: 'Horror',
-        image: 'https://cdn3.movieweb.com/i/movie/eCLfLIYzXjJRLbyeEVIxgR7IqCcSHI/304:50/Annabelle-Comes-Home.jpg'
+        image: 'http://www.movienewsletters.net/photos/NZL_289656R1.jpg'
       },
       {
         title: 'Arrival',
@@ -94,7 +94,7 @@ export default {
         year: 2016,
         released: true,
         genre: 'Drama',
-        image: 'https://cdn3.movieweb.com/i/movie/clquXpvMKVcic1FwpAoZLYpSxt7Pgd/384:50/Arrival.jpg'
+        image: 'https://ca.movieposter.com/posters/archive/main/231/MPW-115998'
       },
       {
         title: 'Deadpool 2',
@@ -102,7 +102,7 @@ export default {
         year: 2018,
         released: true,
         genre: 'Comedy',
-        image: 'https://cdn3.movieweb.com/i/movie/97DOpaTnrtV8OgMmFhBwlWNhEbBbre/304:50/Deadpool-2.jpg'
+        image: 'https://cdn.traileraddict.com/content/20th-century-fox/deadpool-2-poster-9.jpg'
       },
       {
         title: 'Joker',
@@ -110,7 +110,7 @@ export default {
         year: 2019,
         released: false,
         genre: 'Action',
-        image: 'https://cdn3.movieweb.com/i/movie/Oiro1gjJCbQyRJmRHuDlIk9ZgGonde/304:50/Joker.jpg'
+        image: 'https://www.dccomics.com/sites/default/files/imce/2019/04-APR/JokerPoster1200_5ca3c435318d42.29270548.jpg'
       },
       {
         title: 'The Lion King',
@@ -118,7 +118,7 @@ export default {
         year: 2019,
         released: false,
         genre: 'Fantasy',
-        image: 'https://cdn3.movieweb.com/i/movie/juAoW8O4A9oVYDgII5tpGiIazDz43N/304:50/The-Lion-King.jpg'
+        image: 'https://d13ezvd6yrslxm.cloudfront.net/wp/wp-content/images/Image-from-iOS-700x1037.jpg'
       },
       {
         title: 'Shawshank Redemption',
@@ -134,7 +134,7 @@ export default {
         year: 2018,
         released: true,
         genre: 'Action',
-        image: 'https://cdn3.movieweb.com/i/movie/7TydZhcv636GUp4WmTAzyfUTkJmh9N/304:50/Venom.jpg'
+        image: 'https://images-na.ssl-images-amazon.com/images/I/518jo3Xlf8L.jpg'
       },
       {
         title: 'Zombieland Double Tap',
@@ -142,7 +142,7 @@ export default {
         year: 2019,
         released: true,
         genre: 'Comedy',
-        image: 'https://cdn3.movieweb.com/i/movie/K1SmOyqeKnqM2Lz5YjcbqAfhOeufzD/304:50/Zombieland-Double-Tap.jpg'
+        image: 'https://images-na.ssl-images-amazon.com/images/I/51XXo-R0pcL.jpg'
       },
     ]
   }
