@@ -126,7 +126,7 @@ export default {
         year: 1994,
         released: true,
         genre: 'Drama',
-        image: 'https://goodmovieslist.com/article-images/best-drama-movies.jpg'
+        image: 'https://images-na.ssl-images-amazon.com/images/I/51B1ehfX4pL.jpg'
       },
       {
         title: 'Venom',
