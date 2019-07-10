@@ -86,7 +86,7 @@ export default {
         year: 2019,
         released: false,
         genre: 'Horror',
-        image: 'http://www.movienewsletters.net/photos/NZL_289656R1.jpg'
+        image: 'https://www.movienewsletters.net/photos/NZL_289656R1.jpg'
       },
       {
         title: 'Arrival',
